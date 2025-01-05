@@ -1,0 +1,12 @@
+﻿services:
+  personalblazor.client:
+    image: personalblazor.client
+    build:
+      context: .
+      dockerfile: PersonalBlazor/PersonalBlazor.Client/Dockerfile
+
+  personalblazor:
+    image: personalblazor
+    build:
+      context: .
+      dockerfile: PersonalBlazor/PersonalBlazor/Dockerfile

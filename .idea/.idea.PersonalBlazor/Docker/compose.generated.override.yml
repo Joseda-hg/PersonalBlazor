@@ -1,0 +1,23 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  personalblazor:
+    build:
+      context: "C:\\Users\\Jose\\source\\repos\\PersonalBlazor\\PersonalBlazor"
+      dockerfile: "PersonalBlazor/PersonalBlazor/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/PersonalBlazor.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net9.0/PersonalBlazor.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "personalblazor:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Jose\\source\\repos\\PersonalBlazor\\PersonalBlazor\\PersonalBlazor\\\
+      PersonalBlazor:/app:rw"
+    - "C:\\Users\\Jose\\source\\repos\\PersonalBlazor\\PersonalBlazor:/src:rw"
+    - "C:\\Users\\Jose\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
