@@ -10,3 +10,16 @@
     build:
       context: .
       dockerfile: PersonalBlazor/PersonalBlazor/Dockerfile
+    labels:
+    - "traefik.enable=true" # Enable Traefik for this service
+    - "traefik.http.services.personal.loadbalancer.server.port=8081" # Define the internal port for Homarr
+    - "traefik.http.routers.personal.rule=Host(`www.joseda.xyz`)" # Define the routing rule for your domain
+    - "traefik.http.routers.personal.entrypoints=websecure"
+    - "traefik.http.routers.personal.tls=true"
+    - "traefik.http.routers.personal.tls.certresolver=myresolver"
+    networks:
+      - traefik # Use the Traefik network
+networks:
+  traefik:
+    external: true
+    name: traefik
